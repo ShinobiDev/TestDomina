@@ -22,13 +22,8 @@ class TasksController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
         try {
-
-            $task = new Task;
-            
-
-            
+                                    
         } catch (\Throwable $th) {
             //throw $th;
         }

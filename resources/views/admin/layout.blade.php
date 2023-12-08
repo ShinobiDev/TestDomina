@@ -17,7 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
+
+  <link rel="stylesheet" href="/adminLte/plugins/datatables/dataTables.bootstrap.css">
+
   <link rel="stylesheet" href="/adminLte/css//AdminLTE.min.css">
+
+  
   <!-- /AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
@@ -265,6 +270,7 @@ desired effect
     @yield('header')
     <!-- Main content -->
     <section class="content">
+      
 
       <!-- Your Page Content Here -->
       @yield('content')
@@ -364,14 +370,22 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-
+<!-- DataTables -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/adminLte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/adminLte/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- jQuery 2.2.3 -->
 <script src="/adminLte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminLte/bootstrap/js/bootstrap.min.js"></script>
 <!-- /AdminLTE App -->
 <script src="/adminLte/js/app.min.js"></script>
-
+<script>
+  $(function () {
+    $("#proyecsTable").DataTable();
+    
+  });
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
