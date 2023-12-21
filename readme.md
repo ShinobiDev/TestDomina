@@ -6,17 +6,35 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Sistema de para el control de las tareas de los proyectos que necesite el usuario.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Requirements
 
-## Official Documentation
+Php version 7.2
+Laravel version 5
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## How to use
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+<ul>
+  <li>Clonar el repositorio con el comando $git clone https://github.com/ShinobiDev/TestDomina.git</li>
+  <li>Ubicarse dentro de la carpeta del proyecto con el comando $cd TestDomina</li>
+  <li>Ya hubicados dentro de la carpeta del proyecto TestDomina ejecutamos el comando $composer install</li>
+  <li>En la raiz del proyecto se debe crear el archivo .env con los datos del archivo .env.xample</li>
+  <li>Ejecutamos ahora el comando $php artisan key:generate</li>
+  <li>Ejecutamos el comando $php artisan migrate</li>
+  <li>Ejecutamos el comando $php artisan db:seed</li>
+  <li>
+    <p>Este comando nos creara el usuario para poder tener acceso a la aplicación en este caso: 
+      <br><b>User:</b> stalindesarrollador@gmail.com  
+      <br><b>Pass:</b> 80793167  
+    </p>
+  </li>
+  <li>
+    <p>Este usuario se puede cambiar ingresando al archivo del proyecto UsersTableSeeder.php que esta ubicado en la ruta database/seeds/UsersTableSeeder.php</p>
+  </li>
+  <li>Para levantar el proyecto abrimos una terminal desde la raiz y ejecutamos el comando $php artisan serve el sistema nos mostrara la ruta donde podemos ingresar. Ejemplo: Laravel development server started on http://localhost:8000/ </li>
+  <li>Para este caso en el navegador colocamos la url http://localhost:8000/ </li>
+</ul>
 
 ## Security Vulnerabilities
 
