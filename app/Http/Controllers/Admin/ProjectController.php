@@ -14,7 +14,7 @@ use Carbon\Carbon;
 class ProjectController extends Controller
 {
     public function index(){
-        $projects = Proyect::all();
+        $projects = Proyect::where('status_id',1)->get();
         return view('admin.projects.index',compact('projects'));
     }
 
@@ -31,12 +31,47 @@ class ProjectController extends Controller
             $project->description = $request->description;
             $project->initial_date = Carbon::parse($request->initial_date);
             $project->user_created_id = $user->id;
+            $project->status_id = 1;
             $project->save();
 
-            return back()->with('flash', 'Tu proyecto ha sigo creado con exito');
+            $projects = Proyect::where('status_id',1)->get();
+            return view('admin.projects.index',compact('projects'));
 
         } catch (\Throwable $th) {
             dd($th->getMessage());
         }
+    }
+    public function edit($id){
+        $estados = Status::all();
+        // dd('Llego a editar');
+
+        $project = Proyect::where('id',$id)->first();
+        // dd($project);
+        return view('admin.projects.edit',compact('project'));
+    }
+
+    public function update(Request $request){
+        
+        // dd($request->all());
+        $user = Auth::user();
+        $project = Proyect::where('id',$request->project)->first();
+        $project->name = $request->name;
+        $project->description = $request->description;
+        $project->initial_date = Carbon::parse($request->initial_date);
+        $project->user_created_id = $user->id;
+        $project->update();
+        // dd($project);
+
+        $projects = Proyect::where('status_id',1)->get();
+        return view('admin.projects.index',compact('projects'));
+    }
+
+    public function delete($id){
+        $project = Proyect::where('id',$id)->first();
+        $project->status_id = 2;
+        $project->update();
+        // dd($project);
+        $projects = Proyect::where('status_id',1)->get();
+        return view('admin.projects.index',compact('projects'));
     }
 }

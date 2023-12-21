@@ -25,6 +25,15 @@
                 {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
+                            <label for="">Proyectos</label>
+                            <select name="project" id="project" class="form-control">
+                                <option value="">--Seleccione un proyecto--</option>
+                                @foreach($proyectos as $proyecto)
+                                    <option value="{{ $proyecto->id }}">{{ $proyecto->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="">Nombre de la tarea</label>
                             <input type="text" class="form-control" name="name" placeholder="Nombre de la tarea">
                         </div>
@@ -34,7 +43,7 @@
                         </div>
                         <div class="form-group" >
                             <label for="">Fecha vencimiento</label>
-                            <input type="date" class="form-control col-md-6" name="fecha_vencimiento">
+                            <input type="date" class="form-control col-md-6" name="finish_date">
                         </div>
                         <br>
                         <br>

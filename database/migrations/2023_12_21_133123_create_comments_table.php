@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProyectsTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateProyectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyects', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->longText('description');
-            $table->timestamp('initial_date')->nullable();
-            $table->unsignedBigInteger('user_created_id');
-            $table->unsignedBigInteger('status_id');
+            $table->longText('content');
+            $table->timestamp('date_comment');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('task_id');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateProyectsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proyects');
+        Schema::drop('comments');
     }
 }

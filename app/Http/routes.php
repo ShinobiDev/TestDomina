@@ -14,6 +14,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
     Route::get('project','ProjectController@index')->name('project.index');
     Route::get('project/create','ProjectController@create')->name('project.create');
     Route::post('project/store','ProjectController@store')->name('project.store');
+    Route::get('project/edit/{id}','ProjectController@edit')->name('project.edit');
+    Route::post('project/update','ProjectController@update')->name('project.update');
+    Route::get('project/delete/{id}','ProjectController@delete')->name('project.delete');
+
+    // Comments
+    Route::get('comments/{id}','CommentController@index')->name('comment.index');
+    Route::get('comments/create/{id}','CommentController@create')->name('comment.create');
+    Route::post('comments/store','CommentController@store')->name('comment.store');
 });
 
 

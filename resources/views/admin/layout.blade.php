@@ -371,7 +371,7 @@ desired effect
 
 <!-- REQUIRED JS SCRIPTS -->
 <!-- DataTables -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <script src="/adminLte/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/adminLte/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- jQuery 2.2.3 -->
@@ -382,8 +382,7 @@ desired effect
 <script src="/adminLte/js/app.min.js"></script>
 <script>
   $(function () {
-    $("#proyecsTable").DataTable();
-    
+    $("#table").DataTable();    
   });
 </script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

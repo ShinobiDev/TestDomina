@@ -24,7 +24,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="proyecsTable" class="table table-bordered table-striped">
+            <table id="table" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Nombre</td>
@@ -40,8 +40,8 @@
                             <td>{{ $project->description }}</td>
                             <td>{{ $project->initial_date }}</td>
                             <td>
-                                <a href="#" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                <a href="{{ url('admin/project/edit',$project->id) }}" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url('admin/project/delete',$project->id) }}" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                             </td>
                         </tr>
                     @endforeach
