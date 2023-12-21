@@ -36,10 +36,4 @@ Laravel version 5
   <li>Para este caso en el navegador colocamos la url http://localhost:8000/ </li>
 </ul>
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
